@@ -1,9 +1,9 @@
 
 %generate_sin_file(5000);
 %generate_chirp();
-generate_ctek();
+generate_cetk();
 
-function generate_ctek
+function generate_cetk
 
 t0 = 0:(1/44100):0.25;
 t1 = 0:(1/44100):0.5;
@@ -16,18 +16,18 @@ f3 = 1661;%A6b
 f4 = 415;%A4b
 f5 = 622;%E5b
 
-ctek = sin(.01*t0);
-ctek = [ctek sin(2*pi*f1*t1)];
-ctek = [ctek sin(2*pi*f2*t1)];
-ctek = [ctek sin(2*pi*f3*t2)];
-ctek = [ctek sin(2*pi*f4*t1)];
-ctek = [ctek sin(2*pi*f5*t3)];
-ctek = [ctek sin(.01*t0)];
-sound(ctek,44100)
+cetk = sin(.01*t0);
+cetk = [cetk sin(2*pi*f1*t1)];
+cetk = [cetk sin(2*pi*f2*t1)];
+cetk = [cetk sin(2*pi*f3*t2)];
+cetk = [cetk sin(2*pi*f4*t1)];
+cetk = [cetk sin(2*pi*f5*t3)];
+cetk = [cetk sin(.01*t0)];
+sound(cetk,44100)
 
-audiowrite('teamG5-ctek.wav',ctek,44100);
+audiowrite('teamG5-cetk.wav',cetk,44100);
 
-makeSpectrogram(ctek);
+makeSpectrogram(cetk);
 
 end
 
