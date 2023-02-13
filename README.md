@@ -7,7 +7,7 @@ This project will be built on top of the previous project.
 
 ***
 
- ##Contains functions:
+ ## Contains functions:
  generate_sin_file(f);
 	generates a sine wave of given frequency f
 	saves it as a file
