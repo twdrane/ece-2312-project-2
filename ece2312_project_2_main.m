@@ -1,6 +1,19 @@
 
-generate_sin_file(5000);
+%generate_sin_file(5000);
+generate_chirp();
 
+function generate_chirp
+
+t = 0:(1/44100):5;
+f = t*800;
+chirp = sin(2*pi*f.*t);
+sound(chirp,44100);
+
+audiowrite('teamG5-chirp.wav', chirp,44100);
+
+makeSpectrogram(chirp);
+
+end
 
 function generate_sin_file(f)
 
