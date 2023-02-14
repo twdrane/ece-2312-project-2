@@ -7,8 +7,10 @@ This project will be built on top of the previous project.
 
 ***
 
+ HEAD
 ## Contains functions:
 generate_sin_file(f);
+ efcb9b0906995a83a53b5d472a5d5f7508bc839a
 	generates a sine wave of given frequency f
 	saves it as a file
 	displays a spectrogram for that waveform
