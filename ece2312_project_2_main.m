@@ -13,8 +13,9 @@ F = [0 3700/Fs 4300/Fs 1];
 A = [1 1 0 0];
 [fil1, fil2] = firls(255,F,A);
 filteredAudio = filter(fil1,fil2,audioFile);
+sound(filteredAudio);
 
-makeSpectrogram(audioFile);
+%makeSpectrogram(audioFile);
 makeSpectrogram(filteredAudio);
 
 audiowrite('teamG5-filteredspeechsine.wav',filteredAudio,44100);
