@@ -1,7 +1,41 @@
+close all
 
 %generate_sin_file(5000);
 %generate_chirp();
-generate_cetk();
+%generate_cetk();
+%generate_speechchirp();
+generate_filteredspeech()
+
+function generate_filteredspeech
+
+[audioFile,Fs] = audioread('teamG5-speechchirp.wav');
+F = [0 3700/Fs 4300/Fs 1];
+A = [1 1 0 0];
+[fil1, fil2] = firls(255,F,A);
+filteredAudio = filter(fil1,fil2,audioFile);
+
+makeSpectrogram(audioFile);
+makeSpectrogram(filteredAudio);
+
+audiowrite('teamG5-filteredspeechsine.wav',filteredAudio,44100);
+
+end
+
+function generate_speechchirp
+
+[audioFile,Fs] = audioread('thequickbrownfox.wav');
+[sinewave,Fs] = audioread('teamG5-sinetone.wav');
+%length(sinewave)
+%length(audioFile)
+audioFile = audioFile + sinewave;
+%length(audioFile)
+sound(audioFile,Fs);
+
+audiowrite('teamG5-speechchirp.wav',audioFile,44100);
+
+makeSpectrogram(audioFile);
+
+end 
 
 function generate_cetk
 
@@ -46,7 +80,7 @@ end
 
 function generate_sin_file(f)
 
-t = 0:(1/44100):5;
+t = 0:(1/44100):4.99999;
 sine = sin(2*pi*f*t);
 sound(sine,44100);
 
