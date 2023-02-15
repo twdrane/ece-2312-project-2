@@ -7,6 +7,7 @@ close all
 %generate_filteredspeech();
 generate_stereospeech();
 
+% Q6
 function generate_stereospeech
 
 [audioFileSine,Fs] = audioread('teamG5-speechchirp.wav');
@@ -21,6 +22,7 @@ audiowrite('teamG5-stereospeechsine.wav',audioFile,44100);
 
 end
 
+% Q5
 function generate_filteredspeech
 
 [audioFile,Fs] = audioread('teamG5-speechchirp.wav');
@@ -37,6 +39,7 @@ audiowrite('teamG5-filteredspeechsine.wav',filteredAudio,44100);
 
 end
 
+% Q4
 function generate_speechchirp
 
 [audioFile,Fs] = audioread('thequickbrownfox.wav');
@@ -53,6 +56,7 @@ makeSpectrogram(audioFile);
 
 end 
 
+% Q3
 function generate_cetk
 
 t0 = 0:(1/44100):0.25;
@@ -81,6 +85,7 @@ makeSpectrogram(cetk);
 
 end
 
+% Q2
 function generate_chirp
 
 t = 0:(1/44100):5;
@@ -94,6 +99,7 @@ makeSpectrogram(chirp);
 
 end
 
+% Q1
 function generate_sin_file(f)
 
 t = 0:(1/44100):4.99999;
