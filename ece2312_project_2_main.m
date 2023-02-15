@@ -4,7 +4,22 @@ close all
 %generate_chirp();
 %generate_cetk();
 %generate_speechchirp();
-generate_filteredspeech()
+%generate_filteredspeech();
+generate_stereospeech();
+
+function generate_stereospeech
+
+[audioFileSine,Fs] = audioread('teamG5-speechchirp.wav');
+[audioFileFox,Fs] = audioread('thequickbrownfox.wav');
+audioFile = cat(2,audioFileFox,audioFileSine);
+sound(audioFile,Fs)
+
+makeSpectrogram(audioFileFox)
+makeSpectrogram(audioFileSine)
+
+audiowrite('teamG5-stereospeechsine.wav',audioFile,44100);
+
+end
 
 function generate_filteredspeech
 
@@ -13,7 +28,7 @@ F = [0 3700/Fs 4300/Fs 1];
 A = [1 1 0 0];
 [fil1, fil2] = firls(255,F,A);
 filteredAudio = filter(fil1,fil2,audioFile);
-sound(filteredAudio);
+sound(filteredAudio,Fs);
 
 %makeSpectrogram(audioFile);
 makeSpectrogram(filteredAudio);
