@@ -35,6 +35,8 @@ Question 5: gnerate_filteredspeech();
 	
 Question 6: generate_stereospeechsine();
 	
+	saves it as a file
+	displays a spectrogram for that waveform
 
 also: makeSpectrogram();
 	reused from project 1 and modified to only graph the spectrogram
