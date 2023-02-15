@@ -34,7 +34,7 @@ Question 5: gnerate_filteredspeech();
 	displays a spectrogram for that waveform
 	
 Question 6: generate_stereospeechsine();
-	
+	combines the files generated in q4 and the original fox file into a stereo file where the left chanel has a 5000hz sine wave over it
 	saves it as a file
 	displays a spectrogram for that waveform
 
